@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Mountain View High School Lost & Found</title>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
 
     <!-- Optional: custom font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,7 +58,6 @@
               id="item-image"
               class="w-full md:max-w-[500px] max-w-[1000px] flex border border-[#333333] rounded-xl"
             />
-            
           </div>
 
           <div class="flex flex-col gap-4 md:w-[50%] w-full">
@@ -117,11 +127,15 @@
               id="claim-form"
               class="flex flex-col gap-4 bg-[#1e1e1e] border border-[#333333] rounded-xl p-6 mb-6"
             >
-              <div class="flex md:text-[20px] text-[16px] text-white font-[500]">
+              <div
+                class="flex md:text-[20px] text-[16px] text-white font-[500]"
+              >
                 Submit Claim Request
               </div>
               <div class="flex flex-col gap-2">
-                <label for="claim-name" class="md:text-sm text-xs">Your Name *</label>
+                <label for="claim-name" class="md:text-sm text-xs"
+                  >Your Name *</label
+                >
                 <input
                   id="claim-name"
                   class="flex flex-row bg-[#121212] md:text-sm text-xs border border-[#404040] rounded-xl p-2"
@@ -129,7 +143,9 @@
                 />
               </div>
               <div class="flex flex-col gap-2">
-                <label for="claim-email" class="md:text-sm text-xs">Your Email *</label>
+                <label for="claim-email" class="md:text-sm text-xs"
+                  >Your Email *</label
+                >
                 <input
                   id="claim-email"
                   class="flex flex-row bg-[#121212] md:text-sm text-xs border border-[#404040] rounded-xl p-2"
@@ -207,8 +223,19 @@
     <!-- Page Content -->
     <main class="md:w-auto md:mx-auto md:p-6 md:ml-16 m-0 md:p-10 p-4">
       <div class="flex flex-col items-center p-4">
-        <div class="flex flex-col max-w-7xl bg-[#121212] w-full p-0 md:p-10">
-          <p class="flex md:text-4xl text-3xl pt-12 pb-6 font-[600]">Mountain View High School Lost & Found</p>
+        <div
+          class="flex flex-col max-w-7xl bg-[#121212] w-full p-0 md:p-10"
+        >
+          <div>
+            <img
+              src="assets/mtvlogo.png"
+              alt="Mountain View Logo"
+              class="w-[100px] h-auto"
+            />
+          </div>
+          <p class="flex md:text-4xl text-3xl pt-12 pb-6 font-[600]">
+            Mountain View High School Lost & Found
+          </p>
           <p id="item-count" class="flex pb-4 text-[#9EA3AE]">
             0 items found • Help reunite lost belongings with their owners!
           </p>
@@ -301,7 +328,6 @@
             id="items-container"
             class="md:grid-cols-3 gap-4 grid grid-cols-1"
           >
-          
             <!-- Items will be dynamically loaded here -->
           </div>
         </div>
