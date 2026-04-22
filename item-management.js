@@ -155,7 +155,7 @@ function renderItems(items) {
       alt="Item Image"
       class="w-full h-[250px] object-cover rounded-t-xl"
     />
-    <div class="p-3 border-t border-[#5B5B5B]"> 
+    <div class="p-3 border-t radius-[12px] rounded-b-xl bg-[#102e06]"> 
     <p class="text-lg font-[500] text-white">${formatForDisplay(item.name)}</p>
     <p class="text-sm text-[#D2D5DB]">Found: ${item.dateFound.toDate().toLocaleDateString("en-US")}</p>
     <p class="text-sm text-[#D2D5DB]">Location Found: ${formatForDisplay(item.location)}</p>
